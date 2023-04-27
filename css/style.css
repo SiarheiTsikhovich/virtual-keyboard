@@ -3,7 +3,51 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 300px;
+  width: 800px;
   height: 150px;
   resize: none;
 }
+
+/* .keyboard {
+position: fixed;
+left: auto;
+bottom: 20px;
+background: grey;
+}
+
+.keyboard::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.keyboard-items {
+  text-align: center;
+}
+
+.keyboard-items__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 4px;
+  border: none;
+  background: rgb(203, 203, 215);
+  color: black;
+  font-size: 1.05rem;
+  outline: none;
+  cursor: pointer;
+  float: left;
+}
+ */
+
+ .button-row {
+  height: 60px;
+ }
+
+ .color-red {
+  background-color: red;
+ }
