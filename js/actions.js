@@ -2,12 +2,13 @@ import {queryTextArea} from './queries.js';
 import {drawKeyboardinContainer} from './drawkeyboard.js';
 export let shiftPressed = false;
 export let ctrlPressed = false;
-export let currentLanguage = 'by';
+export let currentLanguage = 'en';
 
 export const defaultAction = (character, characterCapital) => {
   const textArea = queryTextArea();
   textArea.textContent = `${textArea.textContent}${!shiftPressed ? character : characterCapital}`;
   shiftOff();
+  ctrlOff();
   drawKeyboardinContainer();
 }
 
@@ -18,11 +19,28 @@ export const backspaceAction = () => {
 } 
 
 export const ctrlAction = () => {
-  console.log('ctrlAction');
+  ctrlPressed = !ctrlPressed;
+  shiftOff();
+  console.log ('ctrlAction');
+}
+
+export const ctrlOff = () => {
+  ctrlPressed = false;
 }
 
 export const altAction = () => {
-  console.log('altAction')
+  console.log ('altAction', ctrlPressed);
+  if (ctrlPressed) {
+    if (currentLanguage === 'by') {
+      currentLanguage = 'en'
+    }
+    else {
+      currentLanguage = 'by';
+    }
+  }
+  shiftOff();
+  ctrlOff();
+  drawKeyboardinContainer();
 }
 
 
@@ -32,6 +50,7 @@ export const shiftOff = () => {
 
 export const shiftAction = () => {
   shiftPressed = !shiftPressed;
+  ctrlOff();
   drawKeyboardinContainer();
 }
 
