@@ -1,6 +1,7 @@
 // английская и беларуская раскладка клавиатуры
 
-import {altAction, ctrlAction, shiftAction} from './actions.js';
+import { backspaceAction } from './actions.js';
+import {altAction, ctrlAction, shiftAction, spaceAction} from './actions.js';
 
 const makeButton = (character, characterCapital, color = 'grey', action = undefined, size = 1) => {
   return {
@@ -19,7 +20,7 @@ const keyboardButtonsEng = [
     makeButton('2', '@'), 
     makeButton('3', '#'), 
     makeButton('4', '$'), 
-    makeButton('5', '%'), makeButton('6', '^'), makeButton('7', '&'), makeButton('8', '*'), makeButton('9', '('), makeButton('0', ')'), makeButton('-', '_'), makeButton('=', '+'), makeButton('Backspace', 'Backspace', 'red'),
+    makeButton('5', '%'), makeButton('6', '^'), makeButton('7', '&'), makeButton('8', '*'), makeButton('9', '('), makeButton('0', ')'), makeButton('-', '_'), makeButton('=', '+'), makeButton('Backspace', 'Backspace', 'black', backspaceAction, 2),
   ],
   
   [
@@ -35,14 +36,14 @@ const keyboardButtonsEng = [
   ],
 
   [
-    makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('Win', 'Win'), makeButton('Alt', 'Alt', 'red', altAction), makeButton('', '', 'red',), makeButton('Alt gr', 'Alt gr'), makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('ArrowLeft', 'ArrowLeft', 'red'), makeButton('ArrowDown', 'ArrowDown', 'red'), makeButton('ArrowRight', 'ArrowRight', 'red'),
+    makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('Win', 'Win'), makeButton('Alt', 'Alt', 'red', altAction), makeButton('', '', 'grey', spaceAction, 5), makeButton('Alt gr', 'Alt gr'), makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('ArrowLeft', 'ArrowLeft', 'red'), makeButton('ArrowDown', 'ArrowDown', 'red'), makeButton('', 'ArrowRight', 'red'),
   ],
 
 ];
 
 const keyboardButtonsBlr = [
   [
-    makeButton('ё', 'Ё'), makeButton('1', '!'), makeButton('2', '"'), makeButton('3', '№'), makeButton('4', ';'), makeButton('5', '%'), makeButton('6', ':'), makeButton('7', '?'), makeButton('8', '*'), makeButton('9', '('), makeButton('0', ')'), makeButton('-', '_'), makeButton('=', '+'), makeButton('Backspace', 'Backspace', 'red'),
+    makeButton('ё', 'Ё'), makeButton('1', '!'), makeButton('2', '"'), makeButton('3', '№'), makeButton('4', ';'), makeButton('5', '%'), makeButton('6', ':'), makeButton('7', '?'), makeButton('8', '*'), makeButton('9', '('), makeButton('0', ')'), makeButton('-', '_'), makeButton('=', '+'), makeButton('Backspace', 'Backspace', 'black', backspaceAction, 2),
   ],
   
   [
@@ -58,7 +59,7 @@ const keyboardButtonsBlr = [
   ],
 
   [
-    makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('Win', 'Win'), makeButton('Alt', 'Alt', 'red', altAction), makeButton('', '', 'red'), makeButton('Alt gr', 'Alt gr'), makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('ArrowLeft', 'ArrowLeft', 'red'), makeButton('ArrowDown', 'ArrowDown', 'red'), makeButton('ArrowRight', 'ArrowRight', 'red'),
+    makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('Win', 'Win'), makeButton('Alt', 'Alt', 'red', altAction), makeButton('', '', 'grey', spaceAction, 5), makeButton('Alt gr', 'Alt gr'), makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('ArrowLeft', 'ArrowLeft', 'red'), makeButton('ArrowDown', 'ArrowDown', 'red'), makeButton('ArrowRight', 'ArrowRight', 'red'),
   ],
 
 ];

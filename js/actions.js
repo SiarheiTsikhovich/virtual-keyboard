@@ -14,9 +14,15 @@ export const defaultAction = (character, characterCapital) => {
 
 export const backspaceAction = () => {
   const textArea = queryTextArea();
-  const newContent = textArea.textContent.slice(1);
-  textArea.textContent = newContent;
+  const backSpaceContent = textArea.textContent.slice(1);
+  textArea.textContent = backSpaceContent;
 } 
+
+export const spaceAction = () => {
+  const textArea = queryTextArea();
+  const spaceContent = textArea.textContent += " ";
+  textArea.textContent = spaceContent;
+}
 
 export const ctrlAction = () => {
   ctrlPressed = !ctrlPressed;

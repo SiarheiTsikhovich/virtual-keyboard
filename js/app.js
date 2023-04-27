@@ -15,8 +15,6 @@ const keyboardItems = document.createElement("div");
 keyboardItems.className = "keyboard-items";
 keyboard.appendChild(keyboardItems);
 
-// функция для создания кнопок
-
 
 drawKeyboardinContainer();
 
