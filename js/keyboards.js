@@ -12,7 +12,7 @@ const makeButton = (character, characterCapital, color = 'grey', action = undefi
   };
 } 
 
-export const keyboardButtonsEng = [
+const keyboardButtonsEng = [
   [
     makeButton('`', '~'), makeButton('1', '!'), makeButton('2', '@'), makeButton('3', '#'), makeButton('4', '$'), makeButton('5', '%'), makeButton('6', '^'), makeButton('7', '&'), makeButton('8', '*'), makeButton('9', '('), makeButton('0', ')'), makeButton('-', '_'), makeButton('=', '+'), makeButton('Backspace', 'Backspace', 'red'),
   ],

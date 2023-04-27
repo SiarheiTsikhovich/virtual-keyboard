@@ -1,10 +1,19 @@
 import {defaultAction} from './actions.js';
-
+import {queryKeyboard} from './queries.js';
+import {languages} from './keyboards.js';
+import {shiftPressed, ctrlPressed} from './actions.js';
+import {currentLanguage} from './actions.js';
 const buttonsRowClassName = 'button-row';
+
+function createElement(tagName, className){
+  const element = document.createElement(tagName);
+  element.className = className;
+  return element;
+}
 
 export const drawKeyboard = (element) => {
   clearKeyboard();
-  const currentKeyboard = keyboardButtonsEng;
+  const currentKeyboard = languages[currentLanguage];
   currentKeyboard.forEach((buttonsRow) => {
     const buttonsRowElement = createElement('div', buttonsRowClassName);
     buttonsRow.forEach(({character, characterCapital, color, action, size}) => {

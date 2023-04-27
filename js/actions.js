@@ -1,6 +1,8 @@
-let shiftPressed = false;
-let ctrlPressed = false;
-let currentLanguage = 'en';
+import {queryTextArea} from './queries.js';
+import {drawKeyboardinContainer} from './drawkeyboard.js';
+export let shiftPressed = false;
+export let ctrlPressed = false;
+export let currentLanguage = 'by';
 
 export const defaultAction = (character, characterCapital) => {
   const textArea = queryTextArea();
