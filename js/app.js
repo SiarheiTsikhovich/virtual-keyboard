@@ -1,9 +1,13 @@
-
 import {drawKeyboardinContainer} from './drawkeyboard.js';
+
 
 // создаем экран для отображения печатания
 const textarea = document.createElement("textarea");
 textarea.className = "textarea";
+textarea.setAttribute('autofocus', '');
+textarea.onblur = () => {
+  textarea.focus();
+}
 document.body.append(textarea);
 
 // создаем клавиатуру

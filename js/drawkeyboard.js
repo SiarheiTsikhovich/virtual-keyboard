@@ -1,7 +1,7 @@
 import {defaultAction} from './actions.js';
 import {queryKeyboard} from './queries.js';
 import {languages} from './keyboards.js';
-import {shiftPressed, ctrlPressed} from './actions.js';
+import {shiftPressed, ctrlPressed, capslockPressed} from './actions.js';
 import {currentLanguage} from './actions.js';
 const buttonsRowClassName = 'button-row';
 
@@ -19,7 +19,7 @@ export const drawKeyboard = (element) => {
     buttonsRow.forEach(({character, characterCapital, color, action, size}) => {
       const button = createElement('button', '');
       button.textContent = !shiftPressed ? character : characterCapital;
-
+      button.textContent = !capslockPressed ? button.textContent.toLowerCase() : button.textContent.toUpperCase();
 
       if (!action) {
         button.onclick = defaultAction.bind(null, character, characterCapital);
