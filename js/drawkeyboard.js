@@ -18,9 +18,8 @@ export const drawKeyboard = (element) => {
     const buttonsRowElement = createElement('div', buttonsRowClassName);
     buttonsRow.forEach(({character, characterCapital, color, action, size}) => {
       const button = createElement('button', '');
-      button.textContent = !shiftPressed ? character : characterCapital;
-      button.textContent = !capslockPressed ? button.textContent.toLowerCase() : button.textContent.toUpperCase();
-
+      button.textContent = !shiftPressed && !capslockPressed ? character : characterCapital;
+  
       if (!action) {
         button.onclick = defaultAction.bind(null, character, characterCapital);
       } else {

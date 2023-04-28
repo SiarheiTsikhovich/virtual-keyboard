@@ -9,7 +9,7 @@ export let currentLanguage = 'en';
 
 export const defaultAction = (character, characterCapital) => {
   const textArea = queryTextArea();
-  textArea.append(`${!shiftPressed ? character : characterCapital}`);
+  textArea.append(`${!shiftPressed && !capslockPressed ? character : characterCapital}`);
   shiftOff();
   ctrlOff();
   const currentLength = textArea.selectionStart;
@@ -110,10 +110,5 @@ export const shiftAction = () => {
 export const capslockAction = () => { 
   capslockPressed = !capslockPressed;
   const textArea = queryTextArea();
-  if (capslockPressed === true){
-    textArea.textContent = textArea.textContent.toUpperCase();
-  } else {
-    textArea.textContent = textArea.textContent.toLowerCase();
-  }
   drawKeyboardinContainer();
 }
