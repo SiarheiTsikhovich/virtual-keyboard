@@ -19,7 +19,7 @@ export const drawKeyboard = (element) => {
   const currentKeyboard = languages[currentLanguage]; // задаем язык
   currentKeyboard.forEach((buttonsRow) => {
     const buttonsRowElement = createElement('div', buttonsRowClassName); //создаем ряды кнопок
-    buttonsRow.forEach(({character, characterCapital, color, action, size}) => { //создаем кнопки с параметрами, которые прописывали в массиве
+    buttonsRow.forEach(({character, characterCapital, color, action, size, code}) => { //создаем кнопки с параметрами, которые прописывали в массиве
       const button = createElement('button', '');
       button.textContent = !shiftPressed && !capslockPressed ? character : characterCapital; //если не нажат shift и капс - первое значение, если что-то нажато - второе
  
