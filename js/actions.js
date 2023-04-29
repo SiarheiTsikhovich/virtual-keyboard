@@ -13,11 +13,12 @@ export const defaultAction = (character, characterCapital) => {
   shiftOff();
   ctrlOff();
   const currentLength = textArea.selectionStart;
-  console.log (currentLength);
-  console.log(textArea.selectionEnd);
   drawKeyboardinContainer();
   moveTextAreaCursorForward(currentLength + 1);
 }
+
+
+
 
 export const arrowBackAction = () => {
   const textArea = queryTextArea();
@@ -47,6 +48,18 @@ export const backspaceAction = () => {
   moveTextAreaCursorForward(selectionStart - 1);
 } 
 
+export const spaceAction = () => {
+  const textArea = queryTextArea();
+  const textContentLength = textArea.textContent.length;
+  const selectionStart = textArea.selectionStart;
+  const selectionEnd = textArea.selectionEnd;
+  const contentStart = textArea.textContent.substr(0, selectionStart);
+  const contentEnd = textArea.textContent.substr(selectionEnd, textContentLength);
+  const spaceContent = `${contentStart} ${contentEnd}`;
+  textArea.textContent = spaceContent;
+  moveTextAreaCursorForward(selectionStart + 1);
+}        
+
 export const delAction = () => {
   const textArea = queryTextArea();
   const delContent = textArea.textContent.slice(0, -1);
@@ -55,8 +68,14 @@ export const delAction = () => {
 
 export const enterAction = () => {
   const textArea = queryTextArea();
-  const enterContent = textArea.textContent += '\n';
+  const textContentLength = textArea.textContent.length;
+  const selectionStart = textArea.selectionStart;
+  const selectionEnd = textArea.selectionEnd;
+  const contentStart = textArea.textContent.substr(0, selectionStart);
+  const contentEnd = textArea.textContent.substr(selectionEnd, textContentLength);
+  const enterContent = `${contentStart}\n${contentEnd}`;;
   textArea.textContent = enterContent;
+  moveTextAreaCursorForward(selectionStart + 1);
 }
 
 export const tabAction = () => {
@@ -65,16 +84,9 @@ export const tabAction = () => {
   textArea.textContent = tabContent;
 }
 
-export const spaceAction = () => {
-  const textArea = queryTextArea();
-  const spaceContent = textArea.textContent += " ";
-  textArea.textContent = spaceContent;
-}
-
 export const ctrlAction = () => {
   ctrlPressed = !ctrlPressed;
   shiftOff();
-  console.log ('ctrlAction');
 }
 
 export const ctrlOff = () => {
@@ -82,7 +94,6 @@ export const ctrlOff = () => {
 }
 
 export const altAction = () => {
-  console.log ('altAction', ctrlPressed);
   if (ctrlPressed) {
     if (currentLanguage === 'by') {
       currentLanguage = 'en'

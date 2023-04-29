@@ -151,7 +151,6 @@ const keyboardButtonsBlr = [
 
   [
     makeButton('Shift', 'Shift', 'black', shiftAction, 2), 
-    makeButton('\/', '\/'), 
     makeButton('я', 'Я'), 
     makeButton('ч', 'Ч'), 
     makeButton('с', 'С'), 
@@ -162,15 +161,21 @@ const keyboardButtonsBlr = [
     makeButton('б', 'Б'), 
     makeButton('ю', 'Ю'), 
     makeButton('.', ','), 
-    makeButton('/', '?'), 
     makeButton('⇧', '⇧', 'black'), 
     makeButton('Shift', 'Shift', 'black', shiftAction, 2),
   ],
 
   [
-    makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), 
-    makeButton('Win', 'Win'), 
-    makeButton('Alt', 'Alt', 'red', altAction), makeButton('', '', 'grey', spaceAction, 5), makeButton('Alt gr', 'Alt gr'), makeButton('Ctrl', 'Ctrl', 'red', ctrlAction), makeButton('ArrowLeft', 'ArrowLeft', 'red'), makeButton('ArrowDown', 'ArrowDown', 'red'), makeButton('ArrowRight', 'ArrowRight', 'red'),
+    makeButton('Ctrl', 'Ctrl', 'black', ctrlAction), 
+    makeButton('Win', 'Win', 'black'), 
+    makeButton('Alt', 'Alt', 'black', altAction), 
+    makeButton('', '', 'grey', spaceAction, 5), 
+    makeButton('Alt', 'Alt', 'black', altAction, 1), 
+    makeButton('Ctrl', 'Ctrl', 'black', ctrlAction, 1), 
+    makeButton('⇦', '⇦', 'black', arrowBackAction, 1), 
+    makeButton('⇩', '⇩', 'black'), 
+    makeButton('⇨', '⇨', 'black', arrowForwardAction, 1),
+    makeButton('Ctrl', 'Ctrl', 'black', ctrlAction, 1),
   ],
 
 ];
