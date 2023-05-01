@@ -1,4 +1,5 @@
 import {drawKeyboardinContainer} from './drawkeyboard.js';
+import { queryTextArea, queryButton } from './queries.js';
 
 
 // создаем экран для отображения печатания
@@ -17,8 +18,18 @@ document.body.append(keyboard);
 
 drawKeyboardinContainer();
 
+const listenForTextareaKeydown = () => {
+  const textArea = queryTextArea();
+  textArea.addEventListener('keydown', (e) => {
+    e.preventDefault();
+    console.log (e);
+    const keyCode = e.code;
+    const correspondingButton = queryButton(keyCode);
+    correspondingButton.click();
+  })
+}
 
-
+listenForTextareaKeydown();
 
 
 

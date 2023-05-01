@@ -1,5 +1,7 @@
 import {queryTextArea} from './queries.js';
 import {drawKeyboardinContainer} from './drawkeyboard.js';
+// import { getLocalStorage } from './drawkeyboard.js';
+// import { setLocalStorage } from './drawkeyboard.js';
 import { drawKeyboard } from './drawkeyboard.js';
 export let shiftPressed = false;
 export let capslockPressed = false;
@@ -16,9 +18,6 @@ export const defaultAction = (character, characterCapital) => {
   drawKeyboardinContainer();
   moveTextAreaCursorForward(currentLength + 1);
 }
-
-
-
 
 export const arrowBackAction = () => {
   const textArea = queryTextArea();

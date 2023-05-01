@@ -48,6 +48,10 @@
   background: rgb(25, 107, 107);
 }
 
+.button:active {
+  border-radius: 50%;
+}
+
 .size-2 {
   width: 85px;
 }
@@ -64,3 +68,6 @@
   background-color: aqua;
 }
 
+.active2 {
+  background-color: red;
+}
