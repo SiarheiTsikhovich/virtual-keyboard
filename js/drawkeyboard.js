@@ -20,6 +20,7 @@ export const drawKeyboard = (element) => {
   currentKeyboard.forEach((buttonsRow) => {
     const buttonsRowElement = createElement('div', buttonsRowClassName); //создаем ряды кнопок
     buttonsRow.forEach(({character, characterCapital, color, action, size, code}) => { //создаем кнопки с параметрами, которые прописывали в массиве
+      
       const button = createElement('button', '');
       button.textContent = !shiftPressed && !capslockPressed ? character : characterCapital; //если не нажат shift и капс - первое значение, если что-то нажато - второе
  
@@ -32,12 +33,28 @@ export const drawKeyboard = (element) => {
       button.classList.add('button');
       button.classList.add(`color-${color}`);
       button.classList.add(`size-${size}`);
+      button.setAttribute(code, code);
       buttonsRowElement.appendChild(button);
 
+      
     })
     element.appendChild(buttonsRowElement);
   })
 }
+
+// export function setLocalStorage() {
+//   localStorage.setItem('languages', currentLanguage);
+// }
+// window.addEventListener('beforeunload', setLocalStorage);
+
+// export function getLocalStorage() {
+//   if (localStorage.getItem('languages')) {
+//     currentLanguage = localStorage.getItem('languages');
+//   }
+// }
+// window.addEventListener('load', getLocalStorage)
+
+
 
 export const drawKeyboardinContainer = () => { //отрисовываем клавиатуру в контейнере 
   const keyboardContainer = queryKeyboard();

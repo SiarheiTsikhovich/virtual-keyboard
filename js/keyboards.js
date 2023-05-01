@@ -15,8 +15,6 @@ const makeButton = (character, characterCapital, color = 'grey', action = undefi
   };
 } 
 
-const makeBtn = [];
-document.addEventListener("keydown", (event) => { console.log(event.code) })
 
 const keyboardButtonsEng = [
   [
