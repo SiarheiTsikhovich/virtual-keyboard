@@ -3,6 +3,8 @@ import {queryKeyboard} from './queries.js';
 import {languages} from './keyboards.js';
 import {shiftPressed, ctrlPressed, capslockPressed} from './actions.js';
 import {currentLanguage} from './actions.js';
+import { getLocalStorage } from './actions.js';
+import { setLocalStorage } from './actions.js';
 
 const buttonsRowClassName = 'button-row';
 
@@ -41,19 +43,6 @@ export const drawKeyboard = (element) => {
   })
 }
 
-// export function setLocalStorage() {
-//   localStorage.setItem('languages', currentLanguage);
-// }
-// window.addEventListener('beforeunload', setLocalStorage);
-
-// export function getLocalStorage() {
-//   if (localStorage.getItem('languages')) {
-//     currentLanguage = localStorage.getItem('languages');
-//   }
-// }
-// window.addEventListener('load', getLocalStorage)
-
-
 
 export const drawKeyboardinContainer = () => { //отрисовываем клавиатуру в контейнере 
   const keyboardContainer = queryKeyboard();
@@ -64,6 +53,7 @@ export const clearKeyboard = () => {
   queryKeyboard().innerHTML = '';
 };
 
-
+getLocalStorage();
+setLocalStorage();
 
 

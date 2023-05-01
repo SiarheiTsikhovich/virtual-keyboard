@@ -1,7 +1,5 @@
 import {queryTextArea} from './queries.js';
 import {drawKeyboardinContainer} from './drawkeyboard.js';
-// import { getLocalStorage } from './drawkeyboard.js';
-// import { setLocalStorage } from './drawkeyboard.js';
 import { drawKeyboard } from './drawkeyboard.js';
 export let shiftPressed = false;
 export let capslockPressed = false;
@@ -122,3 +120,15 @@ export const capslockAction = () => {
   const textArea = queryTextArea();
   drawKeyboardinContainer();
 }
+
+export function setLocalStorage() {
+  localStorage.setItem('languages', currentLanguage);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+export function getLocalStorage() {
+  if (localStorage.getItem('languages')) {
+    currentLanguage = localStorage.getItem('languages');
+  }
+}
+window.addEventListener('load', getLocalStorage)

@@ -22,7 +22,6 @@ const listenForTextareaKeydown = () => {
   const textArea = queryTextArea();
   textArea.addEventListener('keydown', (e) => {
     e.preventDefault();
-    console.log (e);
     const keyCode = e.code;
     const correspondingButton = queryButton(keyCode);
     correspondingButton.click();
